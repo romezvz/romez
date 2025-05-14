@@ -6,7 +6,7 @@
     "start": "ng serve --no-hmr",
     "build": "ng build",
     "lint": "ng lint",
-    "prepare": "husky install",
+    "prepare": "husky",
     "test": "ng test --watch=false --code-coverage",
     "watch": "ng build --watch --configuration development",
     "format": "prettier --write \"./src/**/*.{ts,json,html}\"",
