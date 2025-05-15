@@ -1,18 +1,20 @@
+import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http'
 import {
   ApplicationConfig,
   importProvidersFrom,
   provideZoneChangeDetection
 } from '@angular/core'
-import { provideRouter } from '@angular/router'
-
-import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http'
 import {
   provideClientHydration,
   withEventReplay
 } from '@angular/platform-browser'
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'
+import { provideRouter } from '@angular/router'
 import { routes } from '@app/core/routes/app.routes'
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
+import { THEME_DARK, THEME_PRESET } from '@shared/constants/global.constants'
+import { providePrimeNG } from 'primeng/config'
 
 /**
  * The main configuration for the Angular application.
@@ -53,7 +55,24 @@ export const appConfig: ApplicationConfig = {
           deps: [HttpClient]
         }
       })
-    )
+    ),
+
+    /**
+     * Provides asynchronous animations support for the application.
+     */
+    provideAnimationsAsync(),
+
+    /**
+     * Configures PrimeNG with the specified theme preset and options, such as dark mode selector.
+     */
+    providePrimeNG({
+      theme: {
+        preset: THEME_PRESET,
+        options: {
+          darkModeSelector: '.' + THEME_DARK
+        }
+      }
+    })
   ]
 }
 
