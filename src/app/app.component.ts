@@ -13,9 +13,6 @@ import { ES_LANG } from '@shared/constants/global.constants'
   providers: [TranslateService]
 })
 export class AppComponent {
-  title = 'romez'
-
-  // Dependency injection for services
   private readonly _translateService = inject(TranslateService)
 
   constructor() {

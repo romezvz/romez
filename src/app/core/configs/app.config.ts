@@ -10,9 +10,9 @@ import {
   provideClientHydration,
   withEventReplay
 } from '@angular/platform-browser'
+import { routes } from '@app/core/routes/app.routes'
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
-import { routes } from './app.routes'
 
 /**
  * The main configuration for the Angular application.

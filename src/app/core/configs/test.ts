@@ -21,6 +21,5 @@ getTestBed().initTestEnvironment(
   platformBrowserDynamicTesting()
 )
 
-// Busca todos los archivos .spec.ts recursivamente
 const context = require.context('./', true, /\.spec\.ts$/)
 context.keys().forEach(context)

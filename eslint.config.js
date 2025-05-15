@@ -110,5 +110,13 @@ module.exports = tseslint.config(
       ...angular.configs.templateAccessibility
     ],
     rules: {}
+  },
+  {
+    files: ['**/*.json'],
+    extends: [
+      ...angular.configs.templateRecommended,
+      ...angular.configs.templateAccessibility
+    ],
+    rules: {}
   }
 )
