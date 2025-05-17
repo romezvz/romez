@@ -1,0 +1,29 @@
+<div class="grid">
+  <div class="card grid grid-cols-2 items-center gap-4 m-5">
+    <div class="flex justify-start">
+      <h1 class="m-5">{{ 'app.title' | translate }}</h1>
+    </div>
+
+    <div class="flex justify-end m-5">
+      @if (isDarkTheme === 'false') {
+        <button
+          class="pi pi-sun cursor-pointer"
+          (click)="toggleTheme()"
+          aria-label="Activar modo claro"
+        ></button>
+      } @else {
+        <button
+          class="pi pi-moon cursor-pointer"
+          (click)="toggleTheme()"
+          aria-label="Activar modo oscuro"
+        ></button>
+      }
+    </div>
+  </div>
+
+  <div class="card flex flex-col justify-center items-center m-5">
+    <router-outlet />
+  </div>
+</div>
+
+<div class="p-4 text-white bg-blue-500 dark:bg-gray-800">Modo claro</div>
